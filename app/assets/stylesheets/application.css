@@ -49,3 +49,10 @@
   .active {
     background-color: #04AA6D;
   }
+
+
+  .content-body{
+    width: 60%;
+    margin: auto;
+    padding: 10% 5%;
+  }

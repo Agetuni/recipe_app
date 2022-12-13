@@ -10,15 +10,17 @@
   </head>
 
   <body>
-  <nav>
-  <ul>  
-  <li><label> Recipie App</label></li>
-  <li><a href="#home">Public recipes</a></li>
-  <li><a href="#news">Recipe</a></li>
-  <li><a href="#contact">Foods</a></li>
-  <li style="float:right"><a class="" href="#about">Logout</a></li>  
-</ul>
-  <nav>
-    <%= yield %>
+    <nav>
+    <ul>  
+      <li><label> Recipie App</label></li>
+      <li><a href="#home">Public recipes</a></li>
+      <li><a href="#news">Recipe</a></li>
+      <li><a href="#contact">Foods</a></li>
+      <li style="float:right"><a class="" href="#about">Logout</a></li>  
+      </ul>
+    <nav>
+    <div class="content-body">
+      <%= yield %>
+    </div>
   </body>
 </html>
