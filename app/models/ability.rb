@@ -5,12 +5,12 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     if user.confirmed_at?
-      can :manage, :all    
+      can :manage, :all
       can :destroy, Recipe do |recipe|
         recipe.user_id == user.id
       end
     else
       can :read, :all
     end
-end
+  end
 end
