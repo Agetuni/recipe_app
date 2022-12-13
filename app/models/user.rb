@@ -6,5 +6,4 @@ class User < ApplicationRecord
   has_many :recipes, dependent: :destroy
   has_many :foods, dependent: :destroy
   has_many :inventories, dependent: :destroy
-  has_one_attached :image, dependent: :destroy
 end
