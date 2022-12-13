@@ -22,7 +22,7 @@ class FoodsController < ApplicationController
 
   def destroy
     delete_food = Food.find(params[:id])
-    RecipeFood.where(food: destroy_food).destroy_all
+    RecipeFood.where(food: delete_food).destroy_all
     delete_food.destroy
     redirect_to foods_path
   end
