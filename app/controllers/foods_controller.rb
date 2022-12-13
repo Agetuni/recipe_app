@@ -16,22 +16,14 @@ class FoodsController < ApplicationController
   def create
     @new_food = Food.new(user: current_user, name: params[:name], price: params[:price],
                          measurement_unit: params[:measurement_unit])
-    if @new_food.save
-      flash.now[:success] = 'Food was successfully created.'
-    else
-      flash.now[:error] = 'Error: food could not be saved'
-      render :new
-    end
+    @new_food.save!
+    redirect_to foods_path
   end
 
   def destroy
-    @foods = Food.where(user_id: current_user.id).order(created_at: :desc)
-    @food_delete = Food.find(params[:id])
-    if @food_delete.destroy
-      flash.now[:success] = 'Food was successfully deleted.'
-    else
-      flash.now[:error] = 'Error: food could not be deleted'
-      render :new
-    end
+    delete_food = Food.find(params[:id])
+    RecipeFood.where(food: destroy_food).destroy_all
+    delete_food.destroy
+    redirect_to foods_path
   end
 end
