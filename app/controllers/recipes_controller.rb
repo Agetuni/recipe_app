@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     @recipe = data[0]
     @recipe_foods = Food.all.joins('INNER JOIN recipe_foods ON foods.id = recipe_foods.food_id')
       .order(created_at: :desc).select('foods.*, recipe_foods.quantity, recipe_foods.id as recipe_foods_id')
-      .where(recipe_foods: { recipe_id: params[:id] }).with_attached_image
+      .where(recipe_foods: { recipe_id: params[:id] })
     return unless current_user
   end
 
