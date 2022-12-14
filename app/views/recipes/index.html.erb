@@ -1,15 +1,19 @@
 <h1> Recipies</h1>
 <div class="row">
     <% @recipes.each do |recipe| %>
-     <div class="card-body">
-        <h5><%= recipe.name %></h5>
-        <p ><%= recipe.description.length < 54 ? recipe.description : truncate(recipe.description, length: 100, omission: '...') %></p>
-        <p >
+    <div class="card bg-light mb-6 align-center " >
+        <div class="card-header"><%= recipe.name %></div>
+        <div class="card-body">
+             <h5 class="card-title">Description</h5>
+            <p class="card-text"><%=  recipe.description %></p>
+        </div>
+        <div class="card-footer bg-transparent border-success" style="display:flex">
             <%= link_to 'Show'.html_safe, recipe_path(recipe.id), class: 'btn btn-outline-info' %>
-            <%= link_to 'Delete'.html_safe, recipe_path(recipe.id), method: :delete, data: { confirm: "Delete recipe #{recipe.name}?" }, class: 'btn btn-outline-danger' if can? :destroy, recipe %>
-            <%= button_to "Delete", recipe_path(recipe.id), method: :delete %>
-        </p>
-    </div>
+            <%= button_to "Delete", recipe_path(recipe.id), method: :delete , class: 'btn btn-outline-danger ml-1' if can? :destroy, recipe %>
+        </div>
+    </div>     
     <% end %>
+</div>
+
 </div>
 

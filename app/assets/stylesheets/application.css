@@ -25,7 +25,19 @@ li {
   float: left;
 }
 
+.logo {
+  font-weight: 700;
+}
+
 li label {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.right-side {
   display: block;
   color: white;
   text-align: center;
@@ -52,5 +64,5 @@ li a:hover:not(.active) {
 .content-body {
   width: 60%;
   margin: auto;
-  padding: 10% 5%;
+  padding: 3% 5%;
 }
