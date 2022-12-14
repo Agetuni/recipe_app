@@ -1,1 +1,16 @@
-<h1> Hello , this is public recipies</h1>
+<h1> Public  Recipies</h1>
+<div class="row">
+    <% @publics.each do |recipe| %>
+    <div class="card bg-light mb-6 align-center " >
+        <div class="card-header"><%= recipe.name %></div>
+        <div class="card-body">
+             <h5 class="card-title">Description</h5>
+            <p class="card-text"><%=  recipe.description %></p>
+        </div>
+        <div class="card-footer bg-transparent border-success" style="display:flex">
+            <%= link_to 'Show'.html_safe, recipe_path(recipe.id), class: 'btn btn-outline-info' %>
+            <%= button_to "Delete", recipe_path(recipe.id), method: :delete , class: 'btn btn-outline-danger ml-1' if can? :destroy, recipe %>
+        </div>
+    </div>     
+    <% end %>
+</div>
