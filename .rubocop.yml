@@ -13,6 +13,9 @@ Layout/EndOfLine:
   Enabled: False
 Layout/LineLength:
   Max: 160
+
+Style/RedundantConstantBase:  
+  Enabled: false
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
