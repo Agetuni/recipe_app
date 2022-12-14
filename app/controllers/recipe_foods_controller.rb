@@ -24,7 +24,7 @@ class RecipeFoodsController < ApplicationController
       end
       flash[:danger] += '</ul>'
     end
-    redirect_to new_recipe_recipe_food_path(params[:recipe_id])
+    redirect_to recipe_path(params[:recipe_id])
   end
 
   def destroy
