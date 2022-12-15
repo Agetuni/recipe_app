@@ -1,0 +1,22 @@
+.element {
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.element p {
+  font-weight: bolder;
+}
+
+.element_left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.element_left_recipes {
+  font-size: 5vh;
+}

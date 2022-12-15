@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+<!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <nav>
+    <ul>  
+      <li><label class ="logo"> Recipie App</label></li>
+     <li><%= link_to ' Public Recipe'.html_safe, public_recipes_path  %> </li>
+       <% if current_user %>
+          <li><%= link_to ' Recipes'.html_safe, recipes_path  %> </li>
+          <li><%= link_to ' Foods'.html_safe, foods_path  %></li>       
+          <li class="right-side" style="float:right"><%= button_to 'Sign Out'.html_safe, destroy_user_session_path, method: :delete, :"data-turbolinks" => false %></li>  
+        
+        <% else %>
+          <li class="right-side" style="float:right"><%= button_to 'Register'.html_safe, new_user_registration_path, method: :get, :"data-turbolinks" => false %></li>
+          <li class="right-side" style="float:right"><%= button_to 'SignIn'.html_safe, new_user_session_path, method: :get, :"data-turbolinks" => false %></li>
+         <% end %>
+      </ul>
+    <nav>
+    <div class="content-body">
+      <%= yield %>
+    </div>
+  </body>
+</html>
