@@ -1,0 +1,15 @@
+<h2>Public recipes</h2>
+<% @public_recipes.each do |recipe| %>
+<div class='element'>
+  <div class='element_left_recipes'>
+    <%= link_to recipe_path(recipe.id), id: "recipe_path#{recipe.id}" do %>
+      <h5> By: <%= recipe.name.capitalize%></h5>
+    <% end %>
+  </div>
+  <div class='element_right'>  
+    <p> Total food items: <%= @public_recipes.length %> </p>
+    <p>Description: <%= truncate(recipe.description, length: 90, omission: '...') %></p>
+    <p class="mt-6"> Total preparation_time: <%= recipe.preparation_time %> </p>
+  </div>
+</div>
+<% end %>
