@@ -9,6 +9,7 @@
           <div class="col-md-9">
               <p class="text-start"><i class="fa fa-clock-o" aria-hidden="true"></i> Preparation time: <%= @recipe.preparation_time %></p>
               <p class="text-start"><i class="fa fa-clock-o" aria-hidden="true"></i> Cooking time: <%= @recipe.cooking_time %></p> 
+               <p class="text-start"><i class="fa fa-clock-o" aria-hidden="true"></i><u> Description</u>: <br> <%= @recipe.description %></p>
           </div>
           <% if current_user && @recipe.user_id == current_user.id %>
             <div class="col-md-3">

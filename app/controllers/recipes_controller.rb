@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-  # before_action :authenticate_user!, except: [:show]
-  # load_and_authorize_resource
+  before_action :authenticate_user!, except: [:show]
+  load_and_authorize_resource
   def destroy
     recipe = Recipe.find(params[:id])
     if recipe.destroy
