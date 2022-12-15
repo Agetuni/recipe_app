@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   layout 'user'
   def index
-    redirect_to user_path(id: current_user)
+    User.all
   end
 
   def show; end

@@ -16,7 +16,7 @@
     <nav>
     <ul>  
       <li><label class ="logo"> Recipie App</label></li>
-     <li><%= link_to ' Public Recipe'.html_safe, root_path  %> </li>
+     <li><%= link_to ' Public Recipe'.html_safe, public_recipes_path  %> </li>
        <% if current_user %>
           <li><%= link_to ' Recipes'.html_safe, recipes_path  %> </li>
           <li><%= link_to ' Foods'.html_safe, foods_path  %></li>       
