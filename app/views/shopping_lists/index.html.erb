@@ -25,6 +25,6 @@
         <tr>
           <td><%= sp_food.food.name %></td>
           <td><%= sp_food.quantity %><%= sp_food.food.measurement_unit %></td>
-          <td><span>$<%= sp_food.food.price * sp_food.quantity.to_i%></span></td>
+          <td><span>$<%= (sp_food.food.price.to_i * sp_food.quantity.to_i)%></span></td>
       <% end %>
     </tbody>
