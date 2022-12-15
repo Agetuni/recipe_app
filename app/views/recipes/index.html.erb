@@ -1,7 +1,10 @@
+<div class="header" style="display:flex; justify-content: space-between; margin:3% 0%">
 <h1> Recipies</h1>
+ <%= link_to ' + Create new '.html_safe, new_recipe_path, class: 'btn btn-primary ' %>
+</div>
 <div class="row">
     <% @recipes.each do |recipe| %>
-    <div class="card bg-light mb-6 align-center " >
+    <div class="card bg-light mb-6 align-center " style="margin:1%">
         <div class="card-header"><%= recipe.name %></div>
         <div class="card-body">
              <h5 class="card-title">Description</h5>
