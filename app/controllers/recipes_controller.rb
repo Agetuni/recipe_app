@@ -56,6 +56,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def sum(recipe_foods)
+    total = 0
+    recipe_foods.each do |rf_food|
+      total += rf_food.food.price * rf_food.quantity.to_i
+    end
+    total
+  end
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :public, :description, :image)
   end
